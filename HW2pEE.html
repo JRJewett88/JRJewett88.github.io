@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Exchange Rates">
+<link rel="stylesheet" type="text/css" href="HW2.css"/>
+<title>CNIT 133 Homework 2 - Basic Operations</title>
+
+<!-- color text box JQ script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<script>
+
+
+$(document).ready(function() {
+
+	$('#convert').focus(function() {
+		$(this).css('background-color','red');
+	});     // end focus
+
+
+}); // end ready
+
+
+</script>
+
+<!-- pannel JQ script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<style> 
+#panel, #flip {
+    padding: 10px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+    width: 275px;
+}
+
+#panel {
+    padding: 5px;
+    display: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<a class="nav-linkout" href="HW2.html">Back to HW2 cover</a>
+
+<div id="content">
+
+<script>
+
+	document.write('<table border="1"><tr><th colspan="3" align="right"><strong>' + "Monetary Exchange Rates" + '</strong></th></tr>');
+
+	document.write('<tr><td colspan="2" style="border: 1px dotted gray;" align="center"><strong>' + 'Enter amount of USD' + "</strong></td>");
+	document.write('<td style="border: 1px dotted gray;" align="center"> <input id="convert" type="text" name="sum" size="10"/>' + "" + "</td></tr>");
+	
+	
+	document.write('<tr><td style="border: 1px dotted gray;" align="center"><strong>' + 'Currency' + "</strong></td>");
+	document.write('<td style="border: 1px dotted gray;" align="center"><strong>' + 'Rate' + "</strong></td>");
+	document.write('<td style="border: 1px dotted gray;" align="center"><strong>' + 'Value' + "<strong></td></tr>");
+
+	document.write('<tr><td style="border: 1px dotted gray;" align="center">' + "British Pound" + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + 0.7014 + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + (document.getElementById('convert').value * 0.7014).toFixed(2) + "</td>");
+
+	document.write('<tr><td style="border: 1px dotted gray;" align="center">' + 'Canadian Dollar' + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + 1.2287 + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + (document.getElementById('convert').value * 1.2287).toFixed(2) + "</td></tr>");
+
+	document.write('<tr><td style="border: 1px dotted gray;" align="center">' + 'Euro' + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + 0.8006 + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + (document.getElementById('convert').value * 0.8006).toFixed(2) + "</td></tr>");
+
+	document.write('<tr><td style="border: 1px dotted gray;" align="center">' + 'Japanese Yen' + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + 109.7821 + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + (document.getElementById('convert').value * 109.7821).toFixed(2) + "</td></tr>");
+
+	document.write('<tr><td style="border: 1px dotted gray;" align="center">' + 'Mexican Peso' + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + 18.3734 + "</td>");
+	document.write('<td style="border: 1px dotted gray;" align="center">' + (document.getElementById('convert').value * 18.3734).toFixed(2) + "</td></tr>");
+
+</script>
+
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">Last updated Jan 31st 2018</div>
+
+</div>
+
+
+</body>
+</html>

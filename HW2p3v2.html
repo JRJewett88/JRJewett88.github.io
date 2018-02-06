@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="jquery">
+<link rel="stylesheet" type="text/css" href="HW2.css"/>
+<title>CNIT 133 Homework 2 - Basic Operations</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#ans1").fadeTo("slow", 0.0);
+        $("#ans2").fadeTo("slow", 0.0);
+        $("#ans3").fadeTo("slow", 0.0);
+    });
+});
+</script>
+
+</head>
+<body onload="calculate()">
+
+<a class="nav-linkout" href="HW2.html">Back to HW2 cover</a>
+
+<div id="content">
+
+<script>
+
+var n1 = parseInt(window.prompt("enter number 1",""));
+var n2 = parseInt(window.prompt("enter number 2",""));
+var n3 = parseInt(window.prompt("enter number 3",""));
+var n4 = parseInt(window.prompt("enter number 4",""));
+var n5 = parseInt(window.prompt("enter number 5",""));
+
+var negCounter = 0;
+var posCounter = 0;
+var zeroCounter = 0;
+
+function calculate() {
+	
+if (n1 > 0) {
+	posCounter++;
+	document.getElementById('ans2').value = posCounter;
+}
+else if (n1 < 0) {
+	negCounter++;
+	document.getElementById('ans1').value = negCounter;
+}
+else if (n1 == 0) {
+	zeroCounter++;
+	document.getElementById('ans3').value = zeroCounter;
+}
+
+if (n2 > 0) {
+	posCounter++;
+	document.getElementById('ans2').value = posCounter;
+}
+else if (n2 < 0) {
+	negCounter++;
+	document.getElementById('ans1').value = negCounter;
+}
+else if (n2 == 0) {
+	zeroCounter++;
+	document.getElementById('ans3').value = zeroCounter;
+}
+
+if (n3 > 0) {
+	posCounter++;
+	document.getElementById('ans2').value = posCounter;
+}
+else if (n3 < 0) {
+	negCounter++;
+	document.getElementById('ans1').value = negCounter;
+}
+else if (n3 == 0){
+	zeroCounter++;
+	document.getElementById('ans3').value = zeroCounter;
+}
+if (n4 > 0) {
+	posCounter++;
+	document.getElementById('ans2').value = posCounter;
+}
+else if (n4 < 0) {
+	negCounter++;
+	document.getElementById('ans1').value = negCounter;
+}
+else if (n4 == 0){
+	zeroCounter++;
+	document.getElementById('ans3').value = negCounter;
+}
+if (n5 > 0) {
+	posCounter++;
+	document.getElementById('ans2').value = posCounter;
+}
+else if (n5 < 0) {
+	negCounter++;
+	document.getElementById('ans1').value = negCounter;
+}
+else if (n5 == 0) {
+	zeroCounter++;
+	document.getElementById('ans3').value = zeroCounter;
+}
+
+}
+
+</script>
+
+<table>
+
+<tr>
+<td> Negative Integers</td>
+<td> Positive Integers</td>
+<td> Number of Zeros</td>
+</tr>
+
+	<tr>
+		<td> <input id="ans1" type="text" name="negative" value="0" /></td>
+		<td> <input id="ans2" type="text" name="positive" value="0" /></td>
+		<td> <input id="ans3" type="text" name="zero" value="0" /></td>
+	</tr>
+
+</table>
+
+<button>click to fade results</button>
+</div>
+
+<p class="css"><a href="https://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!"></a></p>
+
+ <p class="html"><a href="https://validator.w3.org/check?uri=referer">
+<img style="border:0;width:100px;height:59px" src="HTML5.png" alt="HTML5"></a></p>
+
+</body>
+</html>

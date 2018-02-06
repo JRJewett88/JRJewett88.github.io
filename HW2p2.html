@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="input 3 integers">
+<link rel="stylesheet" type="text/css" href="HW2.css"/>
+<title>CNIT 133 Homework 2 - Basic Operations</title>
+<script>
+
+calculate = function()
+{
+    var x= document.getElementById('num1').value;
+    var y = document.getElementById('num2').value; 
+    var z = document.getElementById('num3').value;
+
+    document.getElementById('ans1').value = parseInt(x)+parseInt(y)+parseInt(z);
+    document.getElementById('ans2').value = (parseInt(x)+parseInt(y)+parseInt(z))/(3);
+    document.getElementById('ans3').value = parseInt(x)*parseInt(y)*parseInt(z);
+    document.getElementById('ans4').value = Math.min(x, y, z);
+    document.getElementById('ans5').value = Math.max(x, y, z);
+   }
+
+</script>
+
+</head>
+
+<body>
+<a class="nav-linkout" href="HW2.html">Back to HW2 cover</a>
+<div id="content">
+<table>
+
+	<tr>
+		<td>number 1</td>
+		<td>number 2</td>
+		<td>number 3</td>
+	</tr>
+
+	<tr>
+		<td><input id="num1" type="number" onblur="calculate()"/></td>
+		<td><input id="num2" type="number" onblur="calculate()"/></td>
+		<td><input id="num3" type="number" onblur="calculate()"/></td>
+	</tr>
+
+</table>
+
+<p></p>
+<p></p>
+
+<table>
+
+	<tr>
+		<td>Sum</td>
+		<td>Average</td>
+		<td>Product</td>
+	</tr>
+
+	<tr>
+		<td><input id="ans1" type="text" name="sum" /></td>
+		<td><input id="ans2" type="text" name="average" /></td>
+		<td><input id="ans3" type="text" name="product" /></td>
+	</tr>
+
+	<tr>
+		<td>Smallest</td>
+		<td></td>
+		<td>Largest</td>
+	</tr>
+
+	<tr>
+		<td><input id="ans4" type="text" name="smallest" /></td>
+		<td></td>
+		<td><input id="ans5" type="text" name="largest" /></td>
+	</tr>
+	</table>
+	</div>
+	
+<p class="css"><a href="https://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!"></a></p>
+
+ <p class="html"><a href="https://validator.w3.org/check?uri=referer">
+<img style="border:0;width:100px;height:59px" src="HTML5.png" alt="HTML5"></a></p>
+
+</body>
+</html>
+
+
+
