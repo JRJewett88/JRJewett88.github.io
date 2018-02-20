@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Celsius/Fahrenheit conversions">
+
+<title>Homework 3 - Part 3</title>
+
+<style>
+
+h1 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, td, tr {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 250px;
+	text-align: center;
+
+}
+
+#back {
+	padding: 10px;
+}
+
+
+.button {
+	font-size: 16px;
+	margin: 5px;
+	text-align: center;
+}
+
+.input:hover {
+	background-color: yellow;
+} 
+
+.input {
+	text-align: center;
+}
+
+#content {
+	width: 500px;
+}
+
+</style>
+
+<script>
+
+function calcCel() {
+var Cel = ((5/9)*(document.myform.fahrenheit.value - 32));
+
+document.myform.convertC.value = parseFloat(Cel).toFixed(1);
+
+	if (isNaN(Cel)) {
+		return window.alert("Please enter numerical value")
+	}
+}
+
+
+function calcFar() {
+var Far = ((9/5) * document.myform.celsius.value) + 32;
+
+document.myform.convertF.value = parseFloat(Far).toFixed(1);
+	
+	if (isNaN(Far)) {
+		return window.alert("Please enter numerical value");
+	}
+}
+</script>
+
+</head>
+
+
+<body>
+
+<div id="body">
+<div id="content">
+<form name="myform">
+
+	<table>
+
+		<tr>
+		<td><p>Celsius to Fahrenheit</p></td>
+		<td>&nbsp;</td>
+		<td><p>Fahrenheit to Celsius</p></td>
+		</tr>
+
+		<tr>
+		<td><input class="input" type="text" name="celsius" size="8"> &nbsp;C</td>
+		<td>&nbsp;&nbsp;</td>
+		<td><input class="input" type="text" name="fahrenheit" size="8"> &deg;F</td>
+		</tr>
+
+		<tr>
+		<td><input class="input" type="text" name="convertF" size="8"> &deg;F</td>
+		<td>&nbsp;&nbsp;</td>
+		<td><input class="input" type="text" name="convertC" size="8"> &nbsp;C</td>
+		</tr>
+
+		<tr>
+		<td><input class="button" type="button" value="Convert C to &deg;F" onclick="calcFar()"></td>
+		<td>&nbsp;&nbsp;</td>
+		<td><input class="button" type="button" value="Convert &deg;F to C" onclick="calcCel()"></td>
+		</tr>
+
+	</table>
+
+</form>
+
+</div>
+</div>
+
+<div id="back">
+
+<a class="nav-linkout" href="HW3.html">Back to HW3 cover</a>
+
+
+<p><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+<img style="border:0;width:100px;height:59px" src="HTML5.png" alt="HTML5"></p>
+
+
+</div>
+</body>
+
+
+</html>

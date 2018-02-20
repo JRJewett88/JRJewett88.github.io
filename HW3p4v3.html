@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Children's game">
+
+<title>Homework 3 - Part 4</title>
+
+<style>
+
+#button {
+	font-size: 32px;
+	border-radius: 100px;
+	background-color: red;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+
+}
+
+#back {
+
+position: absolute;
+top: 250px;
+left: 10px;
+
+}
+
+</style> 
+
+</head>
+
+<body>
+
+<input id="button" type="button" value="Generate Question" onclick="start()">
+
+<script>
+
+function generateRandomNumber() {
+ return Math.floor(Math.random()*10);
+}
+
+function start() {
+	var n1 = generateRandomNumber();
+	var n2 = generateRandomNumber();
+  
+  return ask(n1, n2);
+}
+
+function ask(n1, n2) {
+  var question = prompt("How much is " + n1 + " times " + n2 + "?");
+  var userAnswer = question;
+  var correctAnswer = n1 * n2;
+ 
+  if (userAnswer == correctAnswer) {
+    alert("Very Good!"); 
+    
+    return next();
+  } else {
+    alert("No. Please try again.")
+    
+    return ask(n1, n2);
+  }
+}
+
+function next(){
+	var text;
+	var q2 = confirm("Would you like to continue");
+	
+	if (q2 == true) {
+  	var n1 = generateRandomNumber();
+	var n2 = generateRandomNumber();
+    
+		return ask(n1, n2);
+	} else {
+		return alert("Don't stop now!");
+	}
+}
+
+</script>
+
+<div id="back">
+
+<a class="nav-linkout" href="HW3.html">Back to HW3 cover</a>
+
+<p><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+<img style="border:0;width:100px;height:59px" src="HTML5.png" alt="HTML5"></p>
+
+
+</div>
+
+</body>
+</html>

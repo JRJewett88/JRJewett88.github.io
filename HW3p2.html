@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Salesperson commissions">
+
+
+<title>Homework 3 - Part 2</title>
+
+<style>
+
+input.t {text-align: right;}
+
+body { background-color:  #FFFFCC;}
+
+#back {
+	padding: 10px;
+}
+
+
+</style>
+
+<!--Text box JQ -->
+
+<link rel="stylesheet" href="jquery-ui.min.css">
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<script>
+	$( function() {
+		$( '#tip' ).tooltip();
+	} );
+
+</script>
+
+<!-- end Text box JQ -->
+
+<!-- script to calculate item total -->
+
+<script>
+
+function itemCount () {
+
+var N1 = 239.99;
+var N2 = 129.75;
+var N3 = 99.95;
+var N4 = 350.89;
+
+var TN1 = (N1 * document.salesperson_total.num_item1.value);
+var TN2 = (N2 * document.salesperson_total.num_item2.value);
+var TN3 = (N3 * document.salesperson_total.num_item3.value);
+var TN4 = (N4 * document.salesperson_total.num_item4.value);
+
+document.salesperson_total.int_item1.value = document.salesperson_total.num_item1.value;
+document.salesperson_total.int_item2.value = document.salesperson_total.num_item2.value;
+document.salesperson_total.int_item3.value = document.salesperson_total.num_item3.value;
+document.salesperson_total.int_item4.value = document.salesperson_total.num_item4.value;
+
+document.salesperson_total.total_item1.value = TN1;
+document.salesperson_total.total_item2.value = TN2;
+document.salesperson_total.total_item3.value = TN3;
+document.salesperson_total.total_item4.value = TN4;
+
+document.salesperson_total.final_total.value = (TN1 + TN2 + TN3 + TN4).toFixed(2);
+document.salesperson_total.salary.value = (200 + (document.salesperson_total.final_total.value * 0.09)).toFixed(2);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<section>
+
+<h3>Homework 3 - Part 2</h3>
+
+
+<form name="salesperson_total">
+
+Salesperson: <input id="tip" type="text" name="sp" size="20" title="Please make sure that the salesperson's name is spelled correctly"><br>
+
+<h3>Input the number of items sold for each item number:</h3>
+
+Item 1: <input class="t" type="text" name="num_item1" size="8"><br>
+Item 2: <input class="t" type="text" name="num_item2" size="8"><br>
+Item 3: <input class="t" type="text" name="num_item3" size="8"><br>
+Item 4: <input class="t" type="text" name="num_item4" size="8"><br><br>
+<input type="button" value="Submit" onclick="itemCount()">
+<input type="reset" value="Reset"><br><br>
+
+
+<table>
+<tr><th>Item #</th><th>Price</th><th>Number Sold</th><th>Total</th></tr>
+
+<tr><td>1</td><td>$239.99</td><td><input type="text" class="t" name="int_item1"></td><td><input type="text"  class="t" name="total_item1"></td></tr>
+<tr><td>2</td><td>$129.75</td><td><input type="text" class="t" name="int_item2"></td><td><input type="text"  class="t" name="total_item2"></td></tr>
+<tr><td>3</td><td>$99.95</td><td><input type="text" class="t" name="int_item3"></td><td><input type="text"  class="t" name="total_item3"></td></tr>
+<tr><td>4</td><td>$350.89</td><td><input type="text" class="t" name="int_item4"></td><td><input type="text" class="t" name="total_item4"></td></tr>
+<tr><td colspan="3">Total Amount Sold:</td><td><input type="text" class="t" name="final_total"></td></tr>
+<tr><td colspan="3">Total Weekly Earnings:</td><td><input type="text"  class="t" name="salary"></td></tr>
+</table>
+
+</form>
+<br>
+
+</section>
+
+<div id="back">
+
+<a class="nav-linkout" href="HW3.html">Back to HW3 cover</a>
+
+
+<p><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+<img style="border:0;width:100px;height:59px" src="HTML5.png" alt="HTML5"></p>
+
+
+</div>
+</body>
+</html>

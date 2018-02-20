@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Student Grades">
+
+<title>Homework 3 - part 1</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+
+</script>
+
+<style> 
+
+h1 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, td, tr {
+	border: 1px solid black;
+	border-collapse: collapse;
+
+}
+
+#back {
+	padding: 10px;
+}
+
+.enter:hover {
+	background-color: yellow;
+} 
+
+#content {
+	border: 1px solid black;
+	width: 500px;
+}
+
+#panel, #flip {
+	width: 500px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    display: none;
+}
+
+#button {
+	font-size: 24px;
+	margin: 5px;
+	text-align: center;
+
+}
+
+</style>
+
+<script>
+
+function finResult() {
+
+var hwAvg = parseInt(document.myform.hwAvg.value);
+var midExam = parseInt(document.myform.midExam.value);
+var finExam = parseInt (document.myform.finExam.value);
+var ACR = parseInt (document.myform.ACR.value);
+
+
+if ((0 <= hwAvg && hwAvg <= 100) && (0 <= midExam && midExam <= 100) && (0 <= finExam && finExam <= 100) && (0 <= ACR && ACR <= 100)) {
+	
+	return document.myform.finAvg.value = (( .5 * hwAvg) + (.2 * midExam) + (.2 * finExam) + (.1 * ACR )).toFixed(0);
+
+} else {
+
+	return alert("Please Enter Value 0-100");
+}
+}
+
+function grade() {
+
+
+	if (90 <= document.myform.finAvg.value) {
+		return document.myform.finLetter.value = "A";
+	
+	} else if (80 <=  document.myform.finAvg.value && document.myform.finAvg.value < 90) {
+		return document.myform.finLetter.value = "B";
+
+	} else if (70 <=  document.myform.finAvg.value && document.myform.finAvg.value < 80) {
+		return document.myform.finLetter.value = "C";
+
+	} else if (60 <=  document.myform.finAvg.value && document.myform.finAvg.value < 70) {
+		return document.myform.finLetter.value = "D";
+
+	} else if (0 <= document.myform.finAvg.value && document.myform.finAvg.value < 60) {
+		return document.myform.finLetter.value = "F";
+
+	} else {
+}
+}
+
+function retakeAlert() {
+
+if (document.myform.finAvg.value < 70) {
+	return alert("Student Must Retake Class");
+}
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="body">
+
+<div id="content">
+
+<div id="flip">Click for Details</div>
+
+<div id="panel">The following webpage contains the heading, Student Grades, and uses a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers)</div>
+
+<h1>Student grades</h1>
+
+	<form name="myform">
+	
+	<table>
+
+		<tr><td>HW average</td> 
+			<td><input class="enter" name="hwAvg"></td></tr>
+		
+		<tr><td>midterm exam score</td>
+			<td><input class="enter" name="midExam"></td></tr>
+		
+		<tr><td>Final exam score</td>
+			<td><input class="enter" name="finExam"></td></tr>
+		
+		<tr><td>ACR</td>
+			<td><input class="enter" name="ACR"></td></tr>
+
+		<tr><td><br></td>
+			<td><br></td></tr>
+		
+		<tr><td>Final Score</td>
+			<td><input name="finAvg"></td></tr>
+		
+		<tr><td>Letter grade</td>
+			<td><input name="finLetter"></td></tr>
+
+</table>
+</form>
+
+<div id="button">
+
+<input type="button" value="calculate" onclick="finResult(), retakeAlert(), grade()">
+
+</div>
+
+</div>
+</div>
+
+<div id="back">
+
+<a class="nav-linkout" href="HW3.html">Back to HW3 cover</a>
+
+
+<p><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+<img style="border:0;width:100px;height:59px" src="HTML5.png" alt="HTML5"></p>
+
+</div>
+</body>
+</html>

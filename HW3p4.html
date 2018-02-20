@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HW3 - Part 2</title>
+</head>
+
+<body>
+
+<input type="button" value="Generate Question" onclick="ask()">
+
+<script>
+
+function ask() {
+	var n1 = Math.floor(Math.random()*10);
+	var n2 = Math.floor(Math.random()*10);
+    var text;
+    var question = prompt("How much is " + n1 + " times " + n2 + "?");
+
+    switch(question) {
+        case question = n1 * n2 :
+        text = "Correct!";
+        break;
+    case "wrong":
+        text = "incorrect, Try Again!";
+        break;
+    default:
+    	text = "please enter a value";
+    }
+
+    document.getElementById("response").innerHTML = text;
+}
+
+</script>
+
+
+<p id="response"></p>
+
+
+
+</body>
+</html>
